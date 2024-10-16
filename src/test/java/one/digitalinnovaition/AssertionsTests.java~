@@ -1,0 +1,34 @@
+package one.digitalinnovaition;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDateTime;
+
+public class AssertionsTests {
+
+    @Test
+    void validArrays() {
+        int[] array1 = {10, 20, 30};
+        int[] array2 = {10, 20, 30};
+
+        Assertions.assertArrayEquals(array1, array2);
+    }
+
+    @Test
+    void validIfObjectIsNull() {
+        Person person = null;
+        Assertions.assertNull(person);
+
+        person = new Person("Bruno", LocalDateTime.now());
+        Assertions.assertNotNull(person);
+    }
+
+    @Test
+    void validTypeNumber() {
+        double value1 = 5.0;
+        double value2 = 5.0;
+
+        Assertions.assertEquals(value1, value2);
+    }
+}
